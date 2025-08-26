@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-from: 12 7% 9%; /* slate-950 */
+    --bg-via: 251 83% 14%; /* indigo-950 */
+    --bg-to: 292 84% 20%; /* fuchsia-900 */
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    @apply min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-fuchsia-900 text-slate-100 antialiased selection:bg-fuchsia-500/30 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.35)];
+  }
+  .neumorph {
+    @apply shadow-[inset_10px_10px_30px_rgba(0,0,0,0.4),inset_-10px_-10px_30px_rgba(255,255,255,0.03)];
+  }
+  .cinematic-gradient {
+    @apply bg-gradient-to-br from-fuchsia-500/20 via-indigo-500/20 to-cyan-500/20;
+  }
+  .card-3d {
+    transform-style: preserve-3d;
+  }
+  .pop-3d {
+    transform: translateZ(22px);
+  }
+}
